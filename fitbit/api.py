@@ -85,6 +85,9 @@ class FitbitOauth2Client(object):
 
         https://dev.fitbit.com/docs/oauth2/#authorization-errors
         """
+        print(f'make_request: url: {url}, kwargs: {kwargs}')
+        if data:
+            print(f'data: {data}')
         data = data or {}
         method = method or ('POST' if data else 'GET')
         response = self._request(
